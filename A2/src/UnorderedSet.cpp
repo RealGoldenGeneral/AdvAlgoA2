@@ -2,28 +2,28 @@
 #include <iostream>
 
 template <typename Key>
-UnorderedSet<Key>::UnorderedSet() {
-    setSize = 0;
-    root = nullptr;
+void UnorderedSet<Key>::updateSize() {
+
 }
 
 template <typename Key>
-typename UnorderedSet<Key>::Iterator UnorderedSet<Key>::begin() const {
-    return Iterator(root);
+size_t UnorderedSet<Key>::getSize(Node<Key> *node) const {
+
 }
 
 template <typename Key>
-typename UnorderedSet<Key>::Iterator UnorderedSet<Key>::end() const {
-    Node<Key>* end = root;
-    while (end->right != nullptr) {
-        end = end->right;
-    }
-    return Iterator(end);
+void UnorderedSet<Key>::deleteOneChild(Node<Key> *node) {
+
 }
 
 template <typename Key>
-size_t UnorderedSet<Key>::size() const {
-    return setSize;
+void UnorderedSet<Key>::deleteFix(Node<Key> *node) {
+
+}
+
+template <typename Key>
+void UnorderedSet<Key>::clearRecursive(Node<Key> *node) {
+
 }
 
 template <typename Key>
@@ -58,4 +58,55 @@ void UnorderedSet<Key>::fixRedRedViolation(Node<Key> *node) {
     if (node->parent != nullptr) {
         fixRedRedViolation(node->parent);
     }
+}
+
+
+template <typename Key>
+UnorderedSet<Key>::UnorderedSet() {
+    setSize = 0;
+    root = nullptr;
+}
+
+template <typename Key>
+UnorderedSet<Key>::~UnorderedSet() {
+
+}
+
+template <typename Key>
+typename UnorderedSet<Key>::Iterator UnorderedSet<Key>::begin() const {
+    return Iterator(root);
+}
+
+template <typename Key>
+typename UnorderedSet<Key>::Iterator UnorderedSet<Key>::end() const {
+    Node<Key>* end = root;
+    while (end->right != nullptr) {
+        end = end->right;
+    }
+    return Iterator(end);
+}
+
+template <typename Key>
+bool UnorderedSet<Key>::insert(const Key &key) {
+
+}
+
+template <typename Key>
+bool UnorderedSet<Key>::search(const Key &key) const {
+
+}
+
+template <typename Key>
+bool UnorderedSet<Key>::erase(const Key &key) {
+
+}
+
+template <typename Key>
+void UnorderedSet<Key>::clear() {
+
+}
+
+template <typename Key>
+size_t UnorderedSet<Key>::size() const {
+    return setSize;
 }
