@@ -34,22 +34,27 @@ template <typename KeyType, typename ValueType>
 HashTable<KeyType, ValueType>::HashTable(unsigned int size, double threshold) {
     tableSize = size;
     loadFactorThreshold = threshold;
-    hashTable = new std::vector<Bucket>;
+    hashTable.resize(tableSize);
 }
 
 template <typename KeyType, typename ValueType>
 typename HashTable<KeyType, ValueType>::Iterator HashTable<KeyType, ValueType>::begin() {
-    return hashTable.begin();
+    for (auto it = hashTable.begin(); it != hashTable.end(); ++it) {
+        if (it->occupied) {
+            return Iterator(it, hashTable.end());
+        }
+    }
+    return end();
 }
 
 template <typename KeyType, typename ValueType>
 typename HashTable<KeyType, ValueType>::Iterator HashTable<KeyType, ValueType>::end() {
-    return hashTable.end();
+    return Iterator(hashTable.end(), hashTable.end());
 }
 
 template <typename KeyType, typename ValueType>
 ValueType &HashTable<KeyType, ValueType>::operator[](const KeyType &key) {
-    return hashTable[key];
+
 }
 
 template <typename KeyType, typename ValueType>
