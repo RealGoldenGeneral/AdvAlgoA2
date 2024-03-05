@@ -59,7 +59,7 @@ ValueType &HashTable<KeyType, ValueType>::operator[](const KeyType &key) {
 
 template <typename KeyType, typename ValueType>
 void HashTable<KeyType, ValueType>::updateValueForKey(const KeyType &key, ValueType newValue) {
-    hashTable[key] = newValue;
+
 }
 
 template <typename KeyType, typename ValueType>
