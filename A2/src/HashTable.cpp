@@ -32,7 +32,9 @@ unsigned int hash(const KeyType& key, int tableSize) {
 
 template <typename KeyType, typename ValueType>
 HashTable<KeyType, ValueType>::HashTable(unsigned int size, double threshold) {
-
+    tableSize = size;
+    loadFactorThreshold = threshold;
+    hashTable = new std::vector<Bucket>;
 }
 
 template <typename KeyType, typename ValueType>
