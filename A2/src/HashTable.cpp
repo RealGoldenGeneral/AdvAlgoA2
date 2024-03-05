@@ -79,15 +79,15 @@ bool HashTable<KeyType, ValueType>::remove(const KeyType &key) {
 
 template <typename KeyType, typename ValueType>
 void HashTable<KeyType, ValueType>::clear() {
-
+    hashTable.clear();
 }
 
 template <typename KeyType, typename ValueType>
 unsigned int HashTable<KeyType, ValueType>::size() const {
-
+    return tableSize;
 }
 
 template <typename KeyType, typename ValueType>
 double HashTable<KeyType, ValueType>::loadFactor() const {
-
+    return loadFactorThreshold;
 }
