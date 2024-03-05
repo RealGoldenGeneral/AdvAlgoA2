@@ -49,7 +49,7 @@ typename HashTable<KeyType, ValueType>::Iterator HashTable<KeyType, ValueType>::
 
 template <typename KeyType, typename ValueType>
 ValueType &HashTable<KeyType, ValueType>::operator[](const KeyType &key) {
-
+    return hashTable[key];
 }
 
 template <typename KeyType, typename ValueType>
