@@ -39,12 +39,12 @@ HashTable<KeyType, ValueType>::HashTable(unsigned int size, double threshold) {
 
 template <typename KeyType, typename ValueType>
 typename HashTable<KeyType, ValueType>::Iterator HashTable<KeyType, ValueType>::begin() {
-
+    return hashTable.begin();
 }
 
 template <typename KeyType, typename ValueType>
 typename HashTable<KeyType, ValueType>::Iterator HashTable<KeyType, ValueType>::end() {
-
+    return hashTable.end();
 }
 
 template <typename KeyType, typename ValueType>
