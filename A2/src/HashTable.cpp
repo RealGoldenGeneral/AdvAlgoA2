@@ -100,14 +100,14 @@ ValueType &HashTable<KeyType, ValueType>::operator[](const KeyType &key) {
     unsigned int originalHash = hash(key);
     unsigned int hash = originalHash % tableSize; // Calculate hash
 
+    unsigned int index = hash;
     // Search for key in hash table
     for (unsigned int i = 0; i < hopRange; ++i) {
-        unsigned int index = (hash + 1) % tableSize;
-
         if (hashTable[index].occupied && hashTable[index].key == key) {
             // If key is found, return its value
             return hashTable[index].value;
         }
+        index = (hash + 1) % tableSize;
     }
 
     // If key not found, insert into hash table with default value
