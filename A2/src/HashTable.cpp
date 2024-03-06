@@ -107,7 +107,7 @@ ValueType &HashTable<KeyType, ValueType>::operator[](const KeyType &key) {
             // If key is found, return its value
             return hashTable[index].value;
         }
-        index = (hash + 1) % tableSize;
+        index = (index + 1) % tableSize;
     }
 
     // If key not found, insert into hash table with default value
